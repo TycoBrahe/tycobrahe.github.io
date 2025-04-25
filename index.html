@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tyco Brahe Mera Evans</title>
+  <style>
+    body {
+      font-family: "Computer Modern Serif", "Latin Modern Roman", serif;
+      margin: 0;
+      background: #e1e1e1;
+    }
+    header {
+      background-color: #333;
+      color: #ebebeb;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      background-color: #444;
+      display: flex;
+      justify-content: center;
+    }
+    nav button {
+      background: none;
+      border: none;
+      color: white;
+      padding: 1rem;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    nav button:hover {
+      background-color: #666;
+    }
+    .tab-content {
+      display: none;
+      padding: 2rem;
+    }
+    .active {
+      display: block;
+    }
+
+    #home img {
+      float: left;  /* Floats the image to the left of the text */
+      width: 25%;
+      margin-right: 20px; /* Adds space on the right side of the image */
+    }
+
+    #home p {
+      overflow: hidden;       /* Ensures text wraps around the floating image */
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Tyco Brahe Mera</h1>
+  </header>
+
+  <nav>
+    <button onclick="showTab('home')">Home</button>
+    <button onclick="showTab('research')">Research</button>
+    <button onclick="showTab('cv')">CV</button>
+  </nav>
+
+  <main>
+    <section id="home" class="tab-content active">
+      <h2>Home</h2>
+      <img src="Tyco_2.JPG" alt="Test">
+      <p>Welcome to my page.</p>
+    </section>
+
+    <section id="cv" class="tab-content">
+      <a href="CV.pdf" target="_blank">CV</a>
+    </section>
+
+    <section id="research" class="tab-content">
+      <h2>Research</h2>
+      <p>I'll talk about my research here.</p>
+    </section>
+  </main>
+
+  <script>
+    function showTab(tabId) {
+      const tabs = document.querySelectorAll('.tab-content');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
+
